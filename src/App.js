@@ -7,6 +7,9 @@ import Home from './views/Home';
 import PizzaItem from './components/PizzaItem.jsx';
 import CarroItem from './components/CarroItem';
 import NotFound from "./views/NotFound";
+import DetallePizzaItem from './views/DetallePizzaItem';
+
+import Navbar from './components/Nabvar';
 import './App.css';
 
 const App = () => {
@@ -15,7 +18,6 @@ const App = () => {
                 cart: [],
 
   });
-
   
 
   const Añadir = (pizza) => {
@@ -31,6 +33,7 @@ const App = () => {
     });
   };
 
+  
   const incremento = (pizza) => {
     setState({
       ...state,
@@ -65,11 +68,12 @@ const App = () => {
     <section className="App">
       <ContextCarro.Provider value={{ state: state, Añadir, incremento, decremento, eliminarPizza }}>
         <BrowserRouter>
+        <Navbar />
 
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
-            <Route path="/pizza/:id" element={<PizzaItem />} />
+            <Route path="/pizza/:id" element={<DetallePizzaItem />} />
             <Route path="/carrito" element={<CarroItem />} />
             <Route path="/404" element={<NotFound />} />
             <Route path="*" element={<NotFound />} />

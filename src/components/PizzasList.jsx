@@ -1,6 +1,5 @@
 import React from 'react';
 import { ContextCarro, useContext } from "../contexts/ContextCarro";
-
 import PizzaItem from './PizzaItem';
 
 
