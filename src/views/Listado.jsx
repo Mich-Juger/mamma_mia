@@ -1,7 +1,7 @@
 import React from 'react';
 import { Context, useContext } from 'react';
 
-const Detalle = (probs) => {
+const ListItem = (probs) => {
   const { Añadir } = useContext(Context);
 
   const { pizza, cart } = probs;
@@ -12,14 +12,14 @@ const Detalle = (probs) => {
       <div className="ingredients">
         <span>
           <h3>{pizza.name}</h3>
-          <small>{pizza.author}</small>
+          <small>{pizza.desc}</small>
         </span>
         <span>
-          <b>Pricio:</b> ₺ {pizza.price}
+          <b>Price:</b> ₺ {pizza.price}
         </span>
         <div>
           <button className="add-btn" onClick={() => Añadir(pizza)}>
-          Añadir
+            Añadir
           </button>
           {cart.map((cartPizza) =>
             cartPizza.id === pizza.id ? (
@@ -37,4 +37,4 @@ const Detalle = (probs) => {
   );
 };
 
-export default Detalle;
+export default ListItem;
