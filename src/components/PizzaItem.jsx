@@ -1,14 +1,15 @@
 import React from 'react';
-import { Context, useContext } from 'react';
+import { ContextCarro, useContext } from "../contexts/ContextCarro";
 
-const ListItem = (probs) => {
-  const { Añadir } = useContext(Context);
+
+const PizzaItem = (probs) => {
+  const { Añadir } = useContext(ContextCarro);
 
   const { pizza, cart } = probs;
 
   return (
     <div className="name">
-      <img className="desc" src={pizza.image} alt={pizza.name} />
+      <img className="desc" src={pizza.img} alt={pizza.name} />
       <div className="ingredients">
         <span>
           <h3>{pizza.name}</h3>
@@ -37,4 +38,4 @@ const ListItem = (probs) => {
   );
 };
 
-export default ListItem;
+export default PizzaItem;

@@ -1,7 +1,14 @@
+import { ContextCarro, useContext } from "../contexts/ContextCarro";
+import PizzasList from "../components/PizzasList";
 
-export default function Home() {
-    return (   
-        <h1>Pizzería Mamma Mía</h1>
- 
+const Home = () => {
+  const { state } = useContext(ContextCarro);
+
+    return (
+        <div>
+          <PizzasList />
+      </div>
     );
-}
+};
+
+export default Home;

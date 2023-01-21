@@ -1,18 +1,18 @@
 import React from 'react';
-import { Context, useContext } from 'react';
+import { ContextCarro, useContext } from "../contexts/ContextCarro";
 
 
 const CartPizza = (probs) => {
   const { pizza } = probs;
-  const { incremento, decremento, eliminarPizza } = useContext(Context);
+  const { incremento, decremento, eliminarPizza } = useContext(ContextCarro);
  
   return (
     <div className="name">
-      <img className="desc" src={pizza.image} alt={pizza.name} />
+      <img className="desc" src={pizza.img} alt={pizza.name} />
       <div className="ingredients">
         <span>
           <h3>{pizza.name}</h3>
-          <small>{pizza.image}</small>
+          <small>{pizza.img}</small>
         </span>
         <span style={{ display: 'flex' }}>
           <span>

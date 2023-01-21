@@ -1,6 +1,6 @@
 import React from 'react';
 import { useContext } from "react";
-import { ContextCarro } from "../components/ContextCarro";
+import { ContextCarro } from "../contexts/ContextCarro";
 
 
 

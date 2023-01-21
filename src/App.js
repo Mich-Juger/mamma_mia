@@ -1,20 +1,18 @@
+
+import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ContextCarro } from "./components/ContextCarro";
+import { ContextCarro } from './contexts/ContextCarro';
 import { data } from './data/pizzas';
 import Home from './views/Home';
-import Detalle from './views/Detalle';
-import Carro from './views/Carro';
+import PizzaItem from './components/PizzaItem.jsx';
+import CarroItem from './components/CarroItem';
 import NotFound from "./views/NotFound";
-
-
 import './App.css';
-import { useState } from "react";
-
 
 const App = () => {
   const [state, setState] = useState ({
                 data: data,
-                carro: [],
+                cart: [],
 
   });
 
@@ -63,8 +61,6 @@ const App = () => {
   };
 
 
-
-
   return (
     <section className="App">
       <ContextCarro.Provider value={{ state: state, Añadir, incremento, decremento, eliminarPizza }}>
@@ -73,8 +69,8 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
-            <Route path="/pizza/:id" element={<Detalle />} />
-            <Route path="/carrito" element={<Carro />} />
+            <Route path="/pizza/:id" element={<PizzaItem />} />
+            <Route path="/carrito" element={<CarroItem />} />
             <Route path="/404" element={<NotFound />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
