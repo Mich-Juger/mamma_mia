@@ -12,21 +12,3 @@ code {
     monospace;
 }
 
-/*import PizzasList from "../components/PizzasList";
-import { ContextCarro } from "../components/ContextCarro";
-import { useContext } from "react";
-
-
-export default function Home() {
-    const state = useContext(state)
-    
-    return (   
-        <div id="Home">
-        
-        <h1>Pizzería Mamma Mía</h1> 
-
-        <PizzasList />
-        </div>
-    );
-}
-*/

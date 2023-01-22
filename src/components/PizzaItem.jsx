@@ -26,7 +26,7 @@ const PizzaItem = (probs) => {
         </span>
 
         
-        <div>
+        <div >
           <button className="add-btn" onClick={() => Añadir(pizza)}>
             Añadir
           </button>

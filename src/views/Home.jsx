@@ -4,6 +4,7 @@ import PizzasList from "../components/PizzasList";
 const Home = () => {
   const { state } = useContext(ContextCarro);
 
+  
     return (
         <div>
           <PizzasList />

@@ -4,10 +4,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ContextCarro } from './contexts/ContextCarro';
 import { data } from './data/pizzas';
 import Home from './views/Home';
-import PizzaItem from './components/PizzaItem.jsx';
-import CarroItem from './components/CarroItem';
-import NotFound from "./views/NotFound";
 import DetallePizzaItem from './views/DetallePizzaItem';
+import DetalleCarroPizza from './views/DetalleCarroPizza';
+import NotFound from "./views/NotFound";
+
+
+
 
 import Navbar from './components/Nabvar';
 import './App.css';
@@ -16,8 +18,9 @@ const App = () => {
   const [state, setState] = useState ({
                 data: data,
                 cart: [],
-
   });
+
+
   
 
   const Añadir = (pizza) => {
@@ -74,7 +77,7 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/pizza/:id" element={<DetallePizzaItem />} />
-            <Route path="/carrito" element={<CarroItem />} />
+            <Route path="/carrito" element={<DetalleCarroPizza />} />
             <Route path="/404" element={<NotFound />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

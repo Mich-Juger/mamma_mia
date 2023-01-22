@@ -2,6 +2,7 @@ import React from 'react';
 import { ContextCarro, useContext } from "../contexts/ContextCarro";
 
 
+
 const CartPizza = (probs) => {
   const { pizza } = probs;
   const { incremento, decremento, eliminarPizza } = useContext(ContextCarro);
@@ -12,7 +13,6 @@ const CartPizza = (probs) => {
       <div className="ingredients">
         <span>
           <h3>{pizza.name}</h3>
-          <small>{pizza.img}</small>
         </span>
         <span style={{ display: 'flex' }}>
           <span>
@@ -21,7 +21,7 @@ const CartPizza = (probs) => {
           {pizza.count > 1 && (
             <>
               <span style={{ marginLeft: '1rem' }}>
-                <b>Count: </b>x{pizza.count}
+                <b>Cantidad: </b>x{pizza.count}
               </span>
               <span style={{ marginLeft: '1rem' }}>
                 <b>Total:</b> $ {(pizza.price * pizza.count).toFixed(2)}
